@@ -75,7 +75,8 @@ class NavigationEnv(gym.Env):
         dist = self._goal_distance()
         clearance = self._min_clearance()
         collision = clearance <= 0.0
-        out_of_bounds = not (0.0 <= self.pose[0] <= cfg.arena_size and 0.0 <= self.pose[1] <= cfg.arena_size)
+        lo, hi = -cfg.boundary_margin, cfg.arena_size + cfg.boundary_margin
+        out_of_bounds = not (lo <= self.pose[0] <= hi and lo <= self.pose[1] <= hi)
         success = dist <= cfg.goal_radius and not collision
 
         # Shaping par potentiel (Ng et al., 1999) : r = Φ(s) - Φ(s') avec Φ = distance à la cible.

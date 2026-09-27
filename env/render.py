@@ -9,7 +9,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
-from matplotlib.patches import Circle  # noqa: E402
+from matplotlib.patches import Circle, Rectangle  # noqa: E402
 from PIL import Image  # noqa: E402
 
 from env.config import EnvConfig  # noqa: E402
@@ -40,9 +40,13 @@ def style_for(name: str):
 
 def draw_scenario(ax, sc: Scenario, cfg: EnvConfig):
     ax.set_facecolor(SURFACE)
-    ax.set_xlim(0, cfg.arena_size)
-    ax.set_ylim(0, cfg.arena_size)
+    m = cfg.boundary_margin
+    ax.set_xlim(-m, cfg.arena_size + m)
+    ax.set_ylim(-m, cfg.arena_size + m)
     ax.set_aspect("equal")
+    ax.add_patch(
+        Rectangle((0, 0), cfg.arena_size, cfg.arena_size, fill=False, edgecolor=OBSTACLE, linestyle="--", lw=0.8)
+    )
     ax.set_xticks(range(0, int(cfg.arena_size) + 1, 2))
     ax.set_yticks(range(0, int(cfg.arena_size) + 1, 2))
     ax.tick_params(colors=MUTED, labelsize=7, length=0)

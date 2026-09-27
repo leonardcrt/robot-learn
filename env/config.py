@@ -21,8 +21,11 @@ class RewardConfig:
 
 @dataclass(frozen=True)
 class EnvConfig:
-    # Arène carrée [0, size] x [0, size]
+    # Zone carrée [0, size] x [0, size] où sont placés départ, cible et obstacles.
+    # Les bords ne sont pas des murs (ils ne figurent pas dans l'observation) : le robot peut
+    # déborder de `boundary_margin` pour contourner un obstacle ; au-delà il est considéré perdu.
     arena_size: float = 10.0
+    boundary_margin: float = 1.5
 
     # Robot différentiel modélisé comme un unicycle
     robot_radius: float = 0.2
