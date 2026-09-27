@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Dépendances (PyTorch CPU)
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -e ".[dev]"
+      - name: Lint
+        run: |
+          ruff check .
+          ruff format --check .
+      - name: Tests unitaires
+        run: pytest -q
+      - name: Tests du pont ROS2 (sans ROS)
+        run: PYTHONPATH=ros2/robot_learn_ros pytest -q ros2/robot_learn_ros/test
+      - name: Benchmark rapide des checkpoints versionnés
+        run: python -m eval.benchmark --episodes 50 --out /tmp/bench
+
+  ros2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Image ROS 2 Jazzy
+        run: docker build -f docker/ros2.Dockerfile -t robot-learn-ros2 .
+      - name: Démo en boucle fermée (3 épisodes, politique PPO)
+        run: |
+          docker run --rm robot-learn-ros2 \
+            ros2 launch robot_learn_ros demo.launch.py episodes:=3 | tee ros.log
+          grep -q "Terminé" ros.log

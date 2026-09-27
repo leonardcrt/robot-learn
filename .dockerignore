@@ -1,0 +1,13 @@
+.venv
+.git
+data
+runs
+results
+**/__pycache__
+**/*.pyc
+*.egg-info
+.pytest_cache
+.ruff_cache
+ros2/build
+ros2/install
+ros2/log
