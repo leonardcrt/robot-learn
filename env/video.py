@@ -23,6 +23,7 @@ class VideoWriter:
             pixelformat="yuv420p",
             macro_block_size=2,
             ffmpeg_log_level="error",
+            output_params=["-movflags", "+faststart"],  # lecture immédiate en streaming sur le web
         )
         self.frames = 0
 
