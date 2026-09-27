@@ -2,11 +2,13 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 import matplotlib
 
-matplotlib.use("Agg")
+if "MPLBACKEND" not in os.environ:  # rendu hors écran par défaut ; eval/play.py demande une fenêtre
+    matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 from matplotlib.patches import Circle, Rectangle  # noqa: E402
