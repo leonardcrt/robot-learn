@@ -1,0 +1,98 @@
+{
+ "expert": {
+  "episodes": 500,
+  "success_rate": 0.966,
+  "success_ci95": [
+   0.9462281949738114,
+   0.9786656605553865
+  ],
+  "collision_rate": 0.0,
+  "timeout_rate": 0.034,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.8721072831662411,
+  "time_to_goal_s": 13.144720496894411,
+  "min_clearance_m": 0.2083028656441258,
+  "mean_return": 12.85940107902466,
+  "ms_per_step": 0.9344233317290982
+ },
+ "potential_field": {
+  "episodes": 500,
+  "success_rate": 0.76,
+  "success_ci95": [
+   0.7206724477826185,
+   0.7953627505813117
+  ],
+  "collision_rate": 0.004,
+  "timeout_rate": 0.236,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.6600938569886935,
+  "time_to_goal_s": 10.367105263157896,
+  "min_clearance_m": 0.30676723591323357,
+  "mean_return": 10.039890209173125,
+  "ms_per_step": 0.8474719114405684
+ },
+ "bc": {
+  "episodes": 500,
+  "success_rate": 0.928,
+  "success_ci95": [
+   0.9019310525910869,
+   0.9475422739464601
+  ],
+  "collision_rate": 0.03,
+  "timeout_rate": 0.042,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.8267380563151453,
+  "time_to_goal_s": 13.685775862068965,
+  "min_clearance_m": 0.18168154583851176,
+  "mean_return": 11.295155030979448,
+  "ms_per_step": 1.5464769271485208
+ },
+ "bc_mlp": {
+  "episodes": 500,
+  "success_rate": 0.326,
+  "success_ci95": [
+   0.2863746168691645,
+   0.36827875037958996
+  ],
+  "collision_rate": 0.582,
+  "timeout_rate": 0.092,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.27146125735269017,
+  "time_to_goal_s": 11.490184049079755,
+  "min_clearance_m": 0.1095904145632138,
+  "mean_return": -3.519229695635977,
+  "ms_per_step": 0.9931371003307993
+ },
+ "dagger": {
+  "episodes": 500,
+  "success_rate": 0.96,
+  "success_ci95": [
+   0.9390259449029252,
+   0.9739594060486436
+  ],
+  "collision_rate": 0.002,
+  "timeout_rate": 0.038,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.8495359548673912,
+  "time_to_goal_s": 13.951041666666667,
+  "min_clearance_m": 0.19782084274700612,
+  "mean_return": 12.4898203229123,
+  "ms_per_step": 1.542352698326319
+ },
+ "ppo": {
+  "episodes": 500,
+  "success_rate": 0.972,
+  "success_ci95": [
+   0.9535531794154484,
+   0.9832491806913788
+  ],
+  "collision_rate": 0.026,
+  "timeout_rate": 0.002,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.783517276606246,
+  "time_to_goal_s": 8.597325102880658,
+  "min_clearance_m": 0.3167860182549248,
+  "mean_return": 14.477100942827441,
+  "ms_per_step": 1.6427454211851098
+ }
+}
