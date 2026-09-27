@@ -1,0 +1,10 @@
+# Pour une installation CPU légère de PyTorch :
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+numpy>=1.26
+torch>=2.2
+gymnasium>=0.29
+stable-baselines3>=2.3
+matplotlib>=3.8
+pillow>=10
+pytest>=8
+ruff>=0.5
