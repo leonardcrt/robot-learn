@@ -1,3 +1,15 @@
 .venv/
 __pycache__/
 *.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Données et journaux régénérables (les checkpoints et les résultats finaux restent versionnés)
+data/
+runs/
+
+# ROS2 (colcon)
+ros2/build/
+ros2/install/
+ros2/log/
