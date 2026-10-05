@@ -59,6 +59,14 @@ def test_success_reward_and_expert_in_empty_map():
     assert ep.success and ep.total_reward > 5
 
 
+def test_evaluate_policy_accepts_env_factory():
+    """Le paramètre optionnel env_factory de evaluate_policy fait évaluer dans MuJoCo."""
+    from eval.metrics import evaluate_policy
+
+    resume, episodes = evaluate_policy(VFHExpert(CFG), [10_000, 10_001], CFG, env_factory=MuJoCoNavEnv)
+    assert resume["episodes"] == 2 and len(episodes) == 2
+
+
 def test_expert_succeeds_on_most_mujoco_maps():
     env = MuJoCoNavEnv(CFG)
     expert = VFHExpert(CFG)
