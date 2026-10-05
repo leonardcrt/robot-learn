@@ -226,6 +226,15 @@ Autre politique : `docker run --rm robot-learn-ros2 ros2 launch robot_learn_ros 
 
 Sur un vrai robot, `/obstacles` viendrait d'un module de perception (lidar + clustering) et `/odom` des encodeurs de roues.
 
+## Extension MuJoCo
+
+Le simulateur principal est cinématique. Une extension optionnelle, `sim_mujoco/`, refait la même tâche avec la physique
+de corps rigides de [MuJoCo](https://mujoco.org/) (masse, inertie, forces bornées, contacts) : les checkpoints existants
+y sont évalués **sans réentraînement** sur les mêmes 500 cartes de test, et un PPO y est entraîné avec le même réseau. À
+la dynamique choisie, les politiques passent presque intactes (moins d'un point d'écart) ; avec un robot beaucoup plus
+lent, les collisions des politiques apprises doublent ou triplent alors que l'expert reste à zéro. Installation
+(`pip install -e ".[mujoco]"`), commandes et tableaux : [`sim_mujoco/README.md`](sim_mujoco/README.md).
+
 ## Reproduire
 
 ```bash
@@ -262,6 +271,7 @@ bc/           collecte des démonstrations, behavior cloning, DAgger
 rl/           PPO (SB3) avec extracteur de features personnalisé, export
 eval/         métriques, benchmark, GIF de comparaison, évolution de l'apprentissage, simulateur interactif
 ros2/         package ROS 2 (policy_node, sim_node, launch)
+sim_mujoco/   extension MuJoCo : la même tâche avec de la physique de corps rigides
 docker/       images entraînement/évaluation et ROS 2 Jazzy
 tests/        tests unitaires (API Gymnasium, cinématique, invariance du réseau, export PPO…)
 checkpoints/  politiques entraînées
@@ -272,6 +282,7 @@ results/      figures, GIF, tableaux
 
 - **Monde idéalisé** : modèle cinématique (ni inertie ni glissement), obstacles ronds, statiques et perçus
   sans bruit. Piste : bruit de capteur et *domain randomization*, puis passage à Gazebo via le nœud ROS 2 existant.
+  L'extension `sim_mujoco/` traite déjà l'inertie, les forces bornées et les contacts.
 - **Observation locale** (5 obstacles, 4 m) : les culs-de-sac plus larges que la portée du capteur piègent
   l'expert (ses 3 % de timeouts) et le BC en hérite. Une petite mémoire (LSTM) ou une carte locale aiderait.
 - **Collisions de PPO** (2,6 %) : pénalité de collision plus forte, RL sous contrainte (PPO-Lagrangien) ou
