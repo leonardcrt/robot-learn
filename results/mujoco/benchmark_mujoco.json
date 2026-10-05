@@ -13,7 +13,7 @@
   "time_to_goal_s": 13.23979381443299,
   "min_clearance_m": 0.2112923773657558,
   "mean_return": 12.976919614773946,
-  "ms_per_step": 1.5330304381997955
+  "ms_per_step": 1.2075776286885012
  },
  "bc": {
   "episodes": 500,
@@ -29,7 +29,7 @@
   "time_to_goal_s": 13.723931623931627,
   "min_clearance_m": 0.18720022861317911,
   "mean_return": 11.619910293137648,
-  "ms_per_step": 2.1018249657700228
+  "ms_per_step": 1.6890844817960327
  },
  "dagger": {
   "episodes": 500,
@@ -45,7 +45,7 @@
   "time_to_goal_s": 13.923270440251574,
   "min_clearance_m": 0.20019650704562544,
   "mean_return": 12.430488178213334,
-  "ms_per_step": 2.0847196161754638
+  "ms_per_step": 1.6804244715562109
  },
  "ppo": {
   "episodes": 500,
@@ -61,6 +61,22 @@
   "time_to_goal_s": 8.808829568788502,
   "min_clearance_m": 0.32624968052273495,
   "mean_return": 14.49532988806853,
-  "ms_per_step": 2.2619104803509766
+  "ms_per_step": 1.822798728821545
+ },
+ "ppo_mujoco": {
+  "episodes": 500,
+  "success_rate": 0.95,
+  "success_ci95": [
+   0.9272313499731688,
+   0.965906493349018
+  ],
+  "collision_rate": 0.048,
+  "timeout_rate": 0.002,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.7489488435331949,
+  "time_to_goal_s": 8.980631578947369,
+  "min_clearance_m": 0.30587601871953063,
+  "mean_return": 13.94917475566564,
+  "ms_per_step": 1.829981829308284
  }
 }

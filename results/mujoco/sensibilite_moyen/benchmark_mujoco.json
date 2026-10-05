@@ -1,0 +1,82 @@
+{
+ "expert": {
+  "episodes": 200,
+  "success_rate": 0.985,
+  "success_ci95": [
+   0.9568335194437211,
+   0.9948858548155076
+  ],
+  "collision_rate": 0.0,
+  "timeout_rate": 0.015,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.8857349409818701,
+  "time_to_goal_s": 13.511167512690356,
+  "min_clearance_m": 0.2108247559706686,
+  "mean_return": 13.27210141721817,
+  "ms_per_step": 1.1985047279866947
+ },
+ "bc": {
+  "episodes": 200,
+  "success_rate": 0.92,
+  "success_ci95": [
+   0.8740095102048769,
+   0.9501598448237337
+  ],
+  "collision_rate": 0.05,
+  "timeout_rate": 0.03,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.8203536469615897,
+  "time_to_goal_s": 13.832065217391303,
+  "min_clearance_m": 0.1858771959023661,
+  "mean_return": 11.30583704945538,
+  "ms_per_step": 1.6547592711961583
+ },
+ "dagger": {
+  "episodes": 200,
+  "success_rate": 0.94,
+  "success_ci95": [
+   0.8980673646931491,
+   0.9653481500987285
+  ],
+  "collision_rate": 0.015,
+  "timeout_rate": 0.045,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.8405396258977558,
+  "time_to_goal_s": 13.870744680851065,
+  "min_clearance_m": 0.1979201676801519,
+  "mean_return": 12.222950239615784,
+  "ms_per_step": 1.6421348400393807
+ },
+ "ppo": {
+  "episodes": 200,
+  "success_rate": 0.95,
+  "success_ci95": [
+   0.9104209437021562,
+   0.9726176509713551
+  ],
+  "collision_rate": 0.05,
+  "timeout_rate": 0.0,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.7650401983188431,
+  "time_to_goal_s": 9.267368421052632,
+  "min_clearance_m": 0.31599839370885396,
+  "mean_return": 13.934240360040176,
+  "ms_per_step": 1.7710237566599925
+ },
+ "ppo_mujoco": {
+  "episodes": 200,
+  "success_rate": 0.95,
+  "success_ci95": [
+   0.9104209437021562,
+   0.9726176509713551
+  ],
+  "collision_rate": 0.05,
+  "timeout_rate": 0.0,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.7534211073166539,
+  "time_to_goal_s": 9.227894736842106,
+  "min_clearance_m": 0.30556435681572985,
+  "mean_return": 14.002817637629228,
+  "ms_per_step": 1.786673094414511
+ }
+}

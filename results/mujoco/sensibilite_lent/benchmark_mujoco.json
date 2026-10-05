@@ -1,0 +1,82 @@
+{
+ "expert": {
+  "episodes": 200,
+  "success_rate": 0.97,
+  "success_ci95": [
+   0.9361048802675267,
+   0.9861798741692518
+  ],
+  "collision_rate": 0.0,
+  "timeout_rate": 0.03,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.8718468421695527,
+  "time_to_goal_s": 13.557216494845362,
+  "min_clearance_m": 0.1960518143387736,
+  "mean_return": 13.13989814929614,
+  "ms_per_step": 1.2449954485574146
+ },
+ "bc": {
+  "episodes": 200,
+  "success_rate": 0.905,
+  "success_ci95": [
+   0.8563973488560237,
+   0.9383373863501365
+  ],
+  "collision_rate": 0.06,
+  "timeout_rate": 0.035,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.8034803176305325,
+  "time_to_goal_s": 14.027624309392266,
+  "min_clearance_m": 0.17564964295314184,
+  "mean_return": 11.23876730171944,
+  "ms_per_step": 1.7137718054911788
+ },
+ "dagger": {
+  "episodes": 200,
+  "success_rate": 0.91,
+  "success_ci95": [
+   0.8622332538615105,
+   0.9423130212854665
+  ],
+  "collision_rate": 0.05,
+  "timeout_rate": 0.04,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.8075138517383259,
+  "time_to_goal_s": 14.045054945054947,
+  "min_clearance_m": 0.18162077822535166,
+  "mean_return": 11.725745757310118,
+  "ms_per_step": 1.6956767294526331
+ },
+ "ppo": {
+  "episodes": 200,
+  "success_rate": 0.925,
+  "success_ci95": [
+   0.8799554020266798,
+   0.9540254929427476
+  ],
+  "collision_rate": 0.075,
+  "timeout_rate": 0.0,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.7360053404909812,
+  "time_to_goal_s": 9.853513513513514,
+  "min_clearance_m": 0.3166273173354801,
+  "mean_return": 13.363095444803037,
+  "ms_per_step": 1.8453016286958754
+ },
+ "ppo_mujoco": {
+  "episodes": 200,
+  "success_rate": 0.925,
+  "success_ci95": [
+   0.8799554020266798,
+   0.9540254929427476
+  ],
+  "collision_rate": 0.075,
+  "timeout_rate": 0.0,
+  "out_of_bounds_rate": 0.0,
+  "spl": 0.7211467404350295,
+  "time_to_goal_s": 9.90810810810811,
+  "min_clearance_m": 0.2942455532069554,
+  "mean_return": 13.322939340959579,
+  "ms_per_step": 1.8382834188738741
+ }
+}
