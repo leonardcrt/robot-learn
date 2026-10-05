@@ -8,6 +8,7 @@ import argparse
 from pathlib import Path
 
 import gymnasium as gym
+import torch
 from stable_baselines3 import PPO
 
 from env.video import VideoWriter
@@ -18,6 +19,8 @@ parser.add_argument("--out", type=Path, default=Path("results/mujoco/ant_demo.mp
 args = parser.parse_args()
 
 # 1. Entraînement : politique classique (l'observation de l'Ant n'a pas de structure d'ensemble).
+#    Peu de threads : pour un petit réseau, plus de threads ne fait que ralentir.
+torch.set_num_threads(4)
 model = PPO("MlpPolicy", gym.make("Ant-v5"), device="cpu", seed=0, verbose=1)
 model.learn(total_timesteps=args.timesteps)
 

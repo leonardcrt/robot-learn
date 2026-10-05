@@ -16,3 +16,6 @@ ros2/log/
 
 # Notes personnelles (non publiées)
 docs/
+
+# Vidéo de l'exercice Ant (10 Mo), à regénérer avec python -m sim_mujoco.ant_demo
+results/mujoco/ant_demo.mp4
