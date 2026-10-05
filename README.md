@@ -232,7 +232,7 @@ Le simulateur principal est cinématique. Une extension optionnelle, `sim_mujoco
 de corps rigides de [MuJoCo](https://mujoco.org/) (masse, inertie, forces bornées, contacts) : les checkpoints existants
 y sont évalués **sans réentraînement** sur les mêmes 500 cartes de test, et un PPO y est entraîné avec le même réseau. À
 la dynamique choisie, les politiques passent presque intactes (moins d'un point d'écart) ; avec un robot beaucoup plus
-lent, les collisions des politiques apprises doublent ou triplent alors que l'expert reste à zéro. Installation
+lent, les collisions des politiques apprises passent à 5 à 7,5 % (contre 0,4 à 2,8 %) alors que l'expert reste à zéro. Installation
 (`pip install -e ".[mujoco]"`), commandes et tableaux : [`sim_mujoco/README.md`](sim_mujoco/README.md).
 
 ## Reproduire
