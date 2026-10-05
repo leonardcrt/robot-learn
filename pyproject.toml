@@ -21,9 +21,10 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.5"]
+mujoco = ["mujoco>=3.0", "gymnasium[mujoco]>=0.29"]
 
 [tool.setuptools]
-packages = ["env", "expert", "models", "bc", "rl", "eval"]
+packages = ["env", "expert", "models", "bc", "rl", "eval", "sim_mujoco"]
 
 [tool.ruff]
 line-length = 120
