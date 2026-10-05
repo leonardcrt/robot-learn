@@ -46,9 +46,12 @@ def summarize(episodes: list[Episode], cfg: EnvConfig) -> dict:
     }
 
 
-def evaluate_policy(policy: Policy, seeds: list[int], cfg: EnvConfig | None = None) -> tuple[dict, list[Episode]]:
+def evaluate_policy(
+    policy: Policy, seeds: list[int], cfg: EnvConfig | None = None, env_factory=None
+) -> tuple[dict, list[Episode]]:
+    """env_factory : classe d'environnement à utiliser (NavigationEnv par défaut), par ex. MuJoCoNavEnv."""
     cfg = cfg or EnvConfig()
-    env = NavigationEnv(cfg)
+    env = (env_factory or NavigationEnv)(cfg)
     t0 = time.perf_counter()
     episodes = [run_episode(env, policy, seed=s) for s in seeds]
     elapsed = time.perf_counter() - t0
