@@ -19,3 +19,6 @@ docs/
 
 # Vidéo de l'exercice Ant (10 Mo), à regénérer avec python -m sim_mujoco.ant_demo
 results/mujoco/ant_demo.mp4
+
+# Journal d'avertissements écrit par MuJoCo (simulation instable)
+MUJOCO_LOG.TXT
